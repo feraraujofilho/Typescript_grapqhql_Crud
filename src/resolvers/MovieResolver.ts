@@ -36,6 +36,7 @@ export class MovieResolver {
     return movie;
   }
 
+  // delete
   @Mutation(() => Boolean)
   async deleteMovie(@Arg('id', () => Int) id: number) {
     await Movie.delete({ id });
@@ -53,7 +54,6 @@ export class MovieResolver {
   }
 
   // read them all
-
   @Query(() => [Movie])
   movies() {
     return Movie.find();
